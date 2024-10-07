@@ -1,0 +1,7 @@
+.cache/
+
+build/
+
+dependencies/simbody
+dependencies/simbody_build
+dependencies/simbody_install
