@@ -24,12 +24,12 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flto")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -flto")
 
 # For the linker flags
-set(CMAKE_LINKER "/Users/nbianco/repos/llvm-project/build/bin/ld.lld")
+#set(CMAKE_LINKER "/Users/nbianco/repos/llvm-project/build/bin/ld.lld")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -flto")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=/Users/nbianco/repos/llvm-project/build/bin/ld.lld")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld")
 
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -flto")
-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -fuse-ld=/Users/nbianco/repos/llvm-project/build/bin/ld.lld")
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -fuse-ld=lld")
 
 
 # Add the executable
