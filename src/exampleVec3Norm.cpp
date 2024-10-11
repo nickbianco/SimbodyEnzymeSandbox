@@ -18,11 +18,10 @@ double f(double x, double y, double z) {
     return vec.norm();
 }
 
-void testSimpleNorm() {
+int main () {
     double x = 1.0;
     double y = 2.0;
     double z = 3.0;
-
 
     double dx = 1.0;
     double dy = 0.0;
@@ -53,9 +52,6 @@ void testSimpleNorm() {
                         enzyme_dup, z, dz);
     printf("dfdz_analytic = %f\n", z / f(x, y, z));
     printf("dfdz_enzyme = %f\n", dfdz);
-}
 
-int main () {
-    testSimpleNorm();
     return 0;
 }

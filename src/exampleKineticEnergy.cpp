@@ -43,7 +43,6 @@ void exampleSlidingMass() {
     // KE = 0.5 * m * u^2
     //
     double u = 1.7;
-    state.updY()= 0.0;
     state.updU()[0] = u;
     Real KE = wrapper(&system, &state);
     printf("KE_analytic = %f\n", 0.5 * mass * u * u);
@@ -53,8 +52,10 @@ void exampleSlidingMass() {
     //
     // dKEdu = m * u
     //
+    // TODO: this compiles but does not produce the correct derivative
+    //       (LLDEnzymeLooseTypeFlags to blame?)
     State dstate = state;
-    dstate.updY() = 0.0;
+    dstate.updU()[0] = 1.0;
     Real dKEdu = __enzyme_fwddiff<Real>((void*)wrapper, 
             enzyme_const, &system, 
             enzyme_dup, &state, &dstate);
@@ -104,6 +105,7 @@ void exampleDoublePendulum() {
     Real KE = wrapper(&system, &state);
     printf("KE = %f\n", KE); 
 
+    // TODO: have not tested if these derivatives are correct.
     State dstate = state;
     state.updU()[0] = 0.0;
     state.updU()[1] = 1.0;

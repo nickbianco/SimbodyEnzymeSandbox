@@ -1,2 +1,2 @@
 # SimbodyEnzymeSandbox
-Testing configurations for differentiating code where Simbody is a dependent library.
+Sandbox for testing the Enzyme AD framework on code where Simbody is a dependent library.
