@@ -16,11 +16,8 @@ message("imported targets ${importTargetsAfter}")
 
 # Simbody
 # -------
-# TODO: Building Simbody using ExternalProject_Add is causing Enzyme AD to fail.
-# set(Simbody_DIR ${CMAKE_SOURCE_DIR}/dependencies/install/simbody/lib/cmake/simbody)
-# set(SIMBODY_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/dependencies/install/simbody/include/simbody)
-set(Simbody_DIR ${CMAKE_SOURCE_DIR}/dependencies/simbody_install/lib/cmake/simbody)
-set(SIMBODY_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/dependencies/simbody_install/include/simbody)
+set(Simbody_DIR ${CMAKE_SOURCE_DIR}/dependencies/install/simbody/lib/cmake/simbody)
+set(SIMBODY_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/dependencies/install/simbody/include/simbody)
 find_package(Simbody REQUIRED)
 
 add_subdirectory(src)
