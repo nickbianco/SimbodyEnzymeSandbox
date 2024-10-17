@@ -21,3 +21,5 @@ AddExecutable(NAME exampleVec3Norm LIB_DEPENDS LLDEnzymeFlags)
 #         Enzyme: Cannot deduce type of copy   
 #         call void @llvm.memcpy.p0.p0.i64(ptr align 8 %27, ptr align 4 %6, i64 20, i1 false) #63, !tbaa.struct !16792, !noalias !16750
 AddExecutable(NAME exampleKineticEnergy LIB_DEPENDS LLDEnzymeFlags LLDEnzymeLooseTypeFlags LLDEnzymePrintFlags)
+
+AddExecutable(NAME exampleKineticEnergyCalculator LIB_DEPENDS LLDEnzymeFlags LLDEnzymePrintFlags)
