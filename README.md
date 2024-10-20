@@ -1,6 +1,14 @@
 # SimbodyEnzymeSandbox
 
-A sandbox for testing the Enzyme AD framework on code where Simbody is a dependent library.
+A sandbox for testing the [Enzyme automatic differentiation framework](https://enzyme.mit.edu/) on code where Simbody is a dependent library of the source code (e.g., OpenSim).
+
+## Install LLVM
+
+Enzyme requires [LLVM 15+ with Clang and LLD enabled](https://enzyme.mit.edu/Installation/). See the Dev Container instructions below to configure Clang and LLD.
+
+## Install the dependencies
+
+Install Simbody and Enzyme via `dependencies/CMakeLists.txt`.  
 
 ## Dev Container
 
@@ -17,10 +25,12 @@ To use the version of LLVM Clang installed in the container, update the `cmake-t
 
 Mark dependency directories as safe
 
-    git config --global --add safe.directory ${containerWorkspaceFolder}/dependencies/Enzyme 
-    git config --global --add safe.directory ${containerWorkspaceFolder}/dependencies/simbody
+    git config --global --add safe.directory SimbodyEnzymeSandbox/dependencies/Enzyme 
+    git config --global --add safe.directory SimbodyEnzymeSandbox/dependencies/simbody
 
 Enabling the LLD linker
+
+I'd prefer to use pass the `-fuse-ld=lld` flag to `LDFLAGS`, but that is not reliable for reasons I don't understand yet. For now, we'll symlink `lld` to our `/usr/bin/ld` (https://lld.llvm.org/#using-lld). 
 
     sudo cp /usr/bin/ld /usr/bin/ld.bak
     sudo ln -sf /opt/llvm-project/build/bin/ld.lld /usr/bin/ld
