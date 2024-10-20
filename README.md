@@ -30,12 +30,12 @@ Mark dependency directories as safe
 
 Enabling the LLD linker
 
-I'd prefer to use pass the `-fuse-ld=lld` flag to `LDFLAGS`, but that is not reliable for reasons I don't understand yet. For now, we'll symlink `lld` to our `/usr/bin/ld` (https://lld.llvm.org/#using-lld). 
+I'd prefer to pass the `-fuse-ld=lld` flag to `LDFLAGS`, but that is not reliable for reasons I don't understand yet. For now, we'll [symlink `lld` to our `/usr/bin/ld`](https://lld.llvm.org/#using-lld) (and backup the existing `ld`). 
 
     sudo cp /usr/bin/ld /usr/bin/ld.bak
     sudo ln -sf /opt/llvm-project/build/bin/ld.lld /usr/bin/ld
 
-Set the LLVM_DIR CMake variable in `settings.json`.
+Set the `LLVM_DIR` CMake variable in `settings.json`.
 
     "cmake.configureSettings": {
         "LLVM_DIR": "/opt/llvm-project/build/lib/cmake/llvm",
