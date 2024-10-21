@@ -1,0 +1,10 @@
+[
+    {
+        "name": "LLVM 18 Clang",
+        "compilers": {
+            "C": "/opt/llvm-project/build/bin/clang",
+            "CXX": "/opt/llvm-project/build/bin/clang++"
+        },
+        "isTrusted": true
+    }
+]

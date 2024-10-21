@@ -31,15 +31,16 @@ RUN cmake -G Ninja ../llvm \
     -DLLVM_ENABLE_ASSERTIONS=ON \
     && ninja -j8
 
+# Update the CMake Tools kit to use the new LLVM build
+COPY .devcontainer/llvm-18-cmake-kit.json /tmp/llvm-18-cmake-kit.json
+RUN jq -s '.[0] + .[1]' /home/vscode/.local/share/CMakeTools/cmake-tools-kits.json /tmp/llvm-18-cmake-kit.json > temp.json && \
+    mv temp.json /home/vscode/.local/share/CMakeTools/cmake-tools-kits.json
+
+# Symlink ld to LLVM's ll.lld
 RUN cp /usr/bin/ld /usr/bin/ld.bak
 RUN ln -sf /opt/llvm-project/build/bin/ld.lld /usr/bin/ld
 
+# Mark dependencies folders as safe
 RUN git config --global --add safe.directory SimbodyEnzymeSandbox/dependencies/Enzyme
 RUN git config --global --add safe.directory SimbodyEnzymeSandbox/dependencies/simbody
 
-# [Optional] Uncomment this section to install additional vcpkg ports.
-# RUN su vscode -c "${VCPKG_ROOT}/vcpkg install <your-port-name-here>"
-
-# [Optional] Uncomment this section to install additional packages.
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
