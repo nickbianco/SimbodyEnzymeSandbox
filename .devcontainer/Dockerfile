@@ -31,6 +31,12 @@ RUN cmake -G Ninja ../llvm \
     -DLLVM_ENABLE_ASSERTIONS=ON \
     && ninja -j8
 
+RUN cp /usr/bin/ld /usr/bin/ld.bak
+RUN ln -sf /opt/llvm-project/build/bin/ld.lld /usr/bin/ld
+
+RUN git config --global --add safe.directory SimbodyEnzymeSandbox/dependencies/Enzyme
+RUN git config --global --add safe.directory SimbodyEnzymeSandbox/dependencies/simbody
+
 # [Optional] Uncomment this section to install additional vcpkg ports.
 # RUN su vscode -c "${VCPKG_ROOT}/vcpkg install <your-port-name-here>"
 
