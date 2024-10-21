@@ -26,3 +26,6 @@ AddExecutable(NAME exampleKineticEnergy LIB_DEPENDS LLDEnzymeFlags LLDEnzymeLoos
 #
 # "Attempting to call an indirect active function whose runtime value is inactive"
 AddExecutable(NAME exampleKineticEnergyCalculator LIB_DEPENDS LLDEnzymeFlags LLDEnzymeLooseTypeFlags LLDEnzymePrintFlags)
+
+
+AddExecutable(NAME exampleKineticEnergyCalculatorSimple LIB_DEPENDS LLDEnzymeFlags LLDEnzymePrintFlags)
