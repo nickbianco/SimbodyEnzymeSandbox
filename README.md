@@ -12,7 +12,7 @@ Install Simbody and Enzyme via `dependencies/CMakeLists.txt`.
 
 ## Dev Container
 
-To use the version of LLVM Clang installed in the container, update the `cmake-tools-kits.json` with the following entry. You may need to close and reopen the container for the changes to take effect.
+To use the version of LLVM Clang installed in the container, update the `cmake-tools-kits.json` with the following entry (see `.devcontainer/llvm-18-cmake-kit.json`). You may need to close and reopen the container for the changes to take effect.
 
     {
         "name": "LLVM 18 Clang",

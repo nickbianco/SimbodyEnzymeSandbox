@@ -31,11 +31,6 @@ RUN cmake -G Ninja ../llvm \
     -DLLVM_ENABLE_ASSERTIONS=ON \
     && ninja -j8
 
-# Update the CMake Tools kit to use the new LLVM build
-COPY .devcontainer/llvm-18-cmake-kit.json /tmp/llvm-18-cmake-kit.json
-RUN jq -s '.[0] + .[1]' /home/vscode/.local/share/CMakeTools/cmake-tools-kits.json /tmp/llvm-18-cmake-kit.json > temp.json && \
-    mv temp.json /home/vscode/.local/share/CMakeTools/cmake-tools-kits.json
-
 # Symlink ld to LLVM's ll.lld
 RUN cp /usr/bin/ld /usr/bin/ld.bak
 RUN ln -sf /opt/llvm-project/build/bin/ld.lld /usr/bin/ld
