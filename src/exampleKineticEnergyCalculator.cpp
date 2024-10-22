@@ -86,8 +86,8 @@ int main() {
     Real KE = calculator.calcKineticEnergy(u0, u1, state);
     printf("KE = %f\n", KE); 
 
-    state.updQ() = 0.0;
-    state.updU() = 0.0;
+    // state.updQ() = 0.0;
+    // state.updU() = 0.0;
 
     Real du0 = 1.0;
     Real du1 = 0.0;
