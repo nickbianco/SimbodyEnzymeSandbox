@@ -8,8 +8,11 @@
     "image": "nbianco/opensim-autodiff:simbody-enzyme-sandbox",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
-		"ghcr.io/devcontainers/features/git-lfs:1": {}
-	},
+		"ghcr.io/devcontainers/features/git-lfs:1": {},
+        "ghcr.io/duduribeiro/devcontainer-features/tmux:1": {
+            "version": "latest"
+        }
+	}
 
     // Mark the dependency folders as safe.
     // "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}/dependencies/Enzyme && git config --global --add safe.directory ${containerWorkspaceFolder}/dependencies/simbody"
