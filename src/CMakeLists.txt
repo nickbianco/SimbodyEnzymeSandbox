@@ -31,3 +31,5 @@ AddExecutable(NAME exampleKineticEnergyCalculator LIB_DEPENDS LLDEnzymeFlags LLD
 AddExecutable(NAME exampleKineticEnergyCalculatorSimple LIB_DEPENDS LLDEnzymeFlags LLDEnzymePrintFlags)
 
 AddExecutable(NAME exampleRealizeAcceleration LIB_DEPENDS LLDEnzymeFlags LLDEnzymeLooseTypeFlags LLDEnzymePrintFlags)
+
+AddExecutable(NAME exampleState LIB_DEPENDS LLDEnzymeFlags LLDEnzymePrintFlags)

@@ -8,7 +8,7 @@ include(ExternalProject)
 # https://enzyme.mit.edu/Installation/
 ExternalProject_Add(Enzyme
         GIT_REPOSITORY   https://github.com/EnzymeAD/Enzyme.git
-        GIT_TAG          v0.0.153
+        GIT_TAG          v0.0.157
         SOURCE_DIR       ${CMAKE_SOURCE_DIR}/Enzyme
         TMP_DIR          ${CMAKE_BINARY_DIR}/Enzyme/tmp
         STAMP_DIR        ${CMAKE_BINARY_DIR}/Enzyme/stamp

@@ -14,7 +14,12 @@ RUN apt-get update && \
     curl \
     gfortran \
     libopenblas-dev \
-    liblapack-dev 
+    liblapack-dev \
+    stow
+
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
+RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 WORKDIR /opt
 RUN git clone https://github.com/llvm/llvm-project.git
