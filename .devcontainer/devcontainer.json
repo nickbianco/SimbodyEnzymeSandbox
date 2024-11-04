@@ -2,10 +2,10 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
 	"name": "C++",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-    // "image": "nbianco/opensim-autodiff:simbody-enzyme-sandbox",
+	// "build": {
+	// 	"dockerfile": "Dockerfile"
+	// },
+    "image": "nbianco/opensim-autodiff:simbody-enzyme-sandbox",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
 		"ghcr.io/devcontainers/features/git-lfs:1": {},
@@ -21,9 +21,7 @@
                 "terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } }
             }
         }
-    },
-
-    "postStartCommand": "tmux new-session -d -s devcontainer"
+    }
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
